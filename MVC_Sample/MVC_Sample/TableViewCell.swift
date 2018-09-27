@@ -10,11 +10,11 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var organizationLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var starLabel: UILabel!
-    @IBOutlet weak var iconImageView: RoundImageView!
+    @IBOutlet private weak var backView: UIView!
+    @IBOutlet private weak var organizationLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var starLabel: UILabel!
+    @IBOutlet private weak var iconImageView: RoundImageView!
     
     
     override func awakeFromNib() {
@@ -36,11 +36,5 @@ class TableViewCell: UITableViewCell {
             }
         }.resume()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }
