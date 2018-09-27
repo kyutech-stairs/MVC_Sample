@@ -21,11 +21,13 @@ struct Result: Decodable {
 struct Item: Decodable {
     var name: String
     var owner: Owner
+    var html: String
     var starCount: Int
     
     private enum CodingKeys: String, CodingKey {
         case name
         case owner
+        case html = "html_url"
         case starCount = "stargazers_count"
     }
 }
