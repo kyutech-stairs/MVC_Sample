@@ -16,6 +16,7 @@
 		7518D724215CA1F700A3EB1C /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518D723215CA1F700A3EB1C /* Helper Files.swift */; };
 		7518D726215CA3DC00A3EB1C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518D725215CA3DC00A3EB1C /* Result.swift */; };
 		7518D72A215CAD7200A3EB1C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518D729215CAD7200A3EB1C /* Repository.swift */; };
+		7518D72C215CD60E00A3EB1C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518D72B215CD60E00A3EB1C /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7518D723215CA1F700A3EB1C /* Helper Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper Files.swift"; sourceTree = "<group>"; };
 		7518D725215CA3DC00A3EB1C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		7518D729215CAD7200A3EB1C /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		7518D72B215CD60E00A3EB1C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				7518D70D215C9E6800A3EB1C /* AppDelegate.swift */,
 				7518D71F215C9F4000A3EB1C /* TableViewController.swift */,
+				7518D72B215CD60E00A3EB1C /* DetailViewController.swift */,
 				7518D721215C9F6800A3EB1C /* TableViewCell.swift */,
 				7518D725215CA3DC00A3EB1C /* Result.swift */,
 				7518D729215CAD7200A3EB1C /* Repository.swift */,
@@ -153,6 +156,7 @@
 				7518D70E215C9E6800A3EB1C /* AppDelegate.swift in Sources */,
 				7518D720215C9F4000A3EB1C /* TableViewController.swift in Sources */,
 				7518D72A215CAD7200A3EB1C /* Repository.swift in Sources */,
+				7518D72C215CD60E00A3EB1C /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

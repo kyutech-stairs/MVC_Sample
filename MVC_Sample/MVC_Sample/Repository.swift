@@ -14,12 +14,14 @@ class Repository {
     var owner: String
     var starCount: Int
     var imagePath: String
+    var path: String
     
-    init(name: String, owner: String, starCount: Int, imagePath: String) {
+    init(name: String, owner: String, starCount: Int, imagePath: String, path: String) {
         self.name = name
         self.owner = owner
         self.starCount = starCount
         self.imagePath = imagePath
+        self.path = path
     }
     
     class func fetchRepository(q: String, completion: @escaping ([Repository]) -> Void) {
@@ -31,7 +33,7 @@ class Repository {
                     let result: Result = try decoder.decode(Result.self, from: data)
                     var repositories: [Repository] = []
                     _ = result.items.map ({
-                        let repository = Repository(name: $0.name, owner: $0.owner.login, starCount: $0.starCount, imagePath: $0.owner.avatarURL)
+                        let repository = Repository(name: $0.name, owner: $0.owner.login, starCount: $0.starCount, imagePath: $0.owner.avatarURL, path: $0.html)
                         repositories.append(repository)
                     })
                     completion(repositories)

@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,7 +13,7 @@
         <scene sceneID="vrj-jg-V94">
             <objects>
                 <tableViewController id="ssm-Dn-vNm" customClass="TableViewController" customModule="MVC_Sample" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bxm-nO-Q1J">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bxm-nO-Q1J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -20,13 +21,16 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="ssm-Dn-vNm" id="LbJ-wg-wSC"/>
+                            </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="80" id="aT2-C3-Jyk" customClass="TableViewCell" customModule="MVC_Sample" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aT2-C3-Jyk" id="HLU-Qj-DkY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45O-0n-67T">
@@ -98,11 +102,46 @@
                     <navigationItem key="navigationItem" title="Github" id="YsJ-Qg-aF2"/>
                     <connections>
                         <outlet property="searchBar" destination="ek5-37-Anf" id="nDi-zi-GM1"/>
+                        <segue destination="PKO-Lv-gg2" kind="show" identifier="toDetail" id="NBK-cs-xee"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7g-gf-UNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="488.80000000000001" y="231.63418290854574"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Y4s-hT-pCk">
+            <objects>
+                <viewController id="PKO-Lv-gg2" customClass="DetailViewController" customModule="MVC_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WL8-Vq-4cH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihy-5j-Ip5">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ihy-5j-Ip5" firstAttribute="top" secondItem="JUm-LG-q1r" secondAttribute="top" id="3RF-Tl-quT"/>
+                            <constraint firstItem="Ihy-5j-Ip5" firstAttribute="bottom" secondItem="JUm-LG-q1r" secondAttribute="bottom" id="cxY-Ai-tJZ"/>
+                            <constraint firstItem="Ihy-5j-Ip5" firstAttribute="leading" secondItem="JUm-LG-q1r" secondAttribute="leading" id="d7L-7M-43e"/>
+                            <constraint firstItem="Ihy-5j-Ip5" firstAttribute="trailing" secondItem="JUm-LG-q1r" secondAttribute="trailing" id="ulq-up-4UW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JUm-LG-q1r"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Ihy-5j-Ip5" id="Jco-ZB-HuT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UY6-cH-pO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1373.5999999999999" y="231.63418290854574"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sU1-oi-2ah">
