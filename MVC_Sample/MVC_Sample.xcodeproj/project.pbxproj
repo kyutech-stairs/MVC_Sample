@@ -65,11 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				7518D70D215C9E6800A3EB1C /* AppDelegate.swift */,
-				7518D71F215C9F4000A3EB1C /* TableViewController.swift */,
-				7518D72B215CD60E00A3EB1C /* DetailViewController.swift */,
-				7518D721215C9F6800A3EB1C /* TableViewCell.swift */,
-				7518D725215CA3DC00A3EB1C /* Result.swift */,
-				7518D729215CAD7200A3EB1C /* Repository.swift */,
+				7518D731215CDF9B00A3EB1C /* Controller */,
+				7518D732215CDFA100A3EB1C /* View */,
+				7518D730215CDF9300A3EB1C /* Model */,
 				7518D711215C9E6800A3EB1C /* Main.storyboard */,
 				7518D714215C9E6800A3EB1C /* Assets.xcassets */,
 				7518D716215C9E6800A3EB1C /* LaunchScreen.storyboard */,
@@ -77,6 +75,32 @@
 				7518D723215CA1F700A3EB1C /* Helper Files.swift */,
 			);
 			path = MVC_Sample;
+			sourceTree = "<group>";
+		};
+		7518D730215CDF9300A3EB1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7518D725215CA3DC00A3EB1C /* Result.swift */,
+				7518D729215CAD7200A3EB1C /* Repository.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7518D731215CDF9B00A3EB1C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7518D71F215C9F4000A3EB1C /* TableViewController.swift */,
+				7518D72B215CD60E00A3EB1C /* DetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7518D732215CDFA100A3EB1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7518D721215C9F6800A3EB1C /* TableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

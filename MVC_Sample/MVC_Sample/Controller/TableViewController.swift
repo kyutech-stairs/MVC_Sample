@@ -11,7 +11,7 @@ import UIKit
 class TableViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet private weak var searchBar: UISearchBar!
-    var path: String = ""
+    private var path: String = ""
 
     private var repositories: [Repository] = []
 
