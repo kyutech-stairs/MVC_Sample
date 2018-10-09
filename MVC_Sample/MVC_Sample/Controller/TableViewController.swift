@@ -8,69 +8,30 @@
 
 import UIKit
 
-class TableViewController: UITableViewController, UISearchBarDelegate {
-
-    @IBOutlet private weak var searchBar: UISearchBar!
-    private var path: String = ""
-
-    private var repositories: [Repository] = []
+class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchBar.text = "Swift"
-        Repository.fetchRepository(q: searchBar.text!) { (results) in
-            self.repositories = results
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repositories.count
+        return 0
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-        cell.configure(repository: repositories[indexPath.item])
-
-        return cell
-    }
+//     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.path = repositories[indexPath.item].path
-        self.performSegue(withIdentifier: "toDetail", sender: nil)
-    }
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        search(query: searchBar.text ?? "")
-        searchBar.resignFirstResponder()
-    }
-
-    private func search(query: String) {
-        Repository.fetchRepository(q: query) { (results) in
-            self.repositories = results
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        return 0
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetail" {
-            let vc = segue.destination as! DetailViewController
-            vc.path = self.path
-        }
     }
 
 }
