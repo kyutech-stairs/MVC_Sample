@@ -7,19 +7,7 @@
 //
 
 import UIKit
-import WebKit
 
-class DetailViewController: UIViewController, WKNavigationDelegate {
-
-    @IBOutlet private weak var webView: WKWebView!
-    var path: String = ""
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        let url = URL(string: path)
-        let urlRequest = URLRequest(url: url!)
-        self.webView.load(urlRequest)
-    }
+class DetailViewController: UIViewController {
 
 }

@@ -8,10 +8,3 @@
 
 import Foundation
 import UIKit
-
-class RoundImageView: UIImageView {
-    override func layoutSubviews() {
-        self.clipsToBounds = true
-        self.layer.cornerRadius = self.bounds.height / 2
-    }
-}
